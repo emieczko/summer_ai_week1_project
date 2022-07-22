@@ -1,3 +1,4 @@
+import json
 # A class to hold general system wide social media data and functions. Eg Data objects of all people, Eg functions: Save social media to disk
 class SocialNetwork:
     def __init__(self):
@@ -18,21 +19,32 @@ class SocialNetwork:
         pass
 
     def  create_account(self):
+        self.id = input("Enter username: ")
+        self.year = ("Enter age: ")
         #implement function that creates account here
         print("Creating ...")
+        self.list_of_people.append(self.id)
         pass
 
 
 class Person:
-    def __init__(self, name, age):
+    def __init__(self, name, age, messages):
         self.id = name
         self.year = age
         self.friendlist = []
+        self.messagelist = []
 
     def add_friend(self, person_object):
+        self.friendlist.append(person_object)
         #implement adding friend. Hint add to self.friendlist
         pass
 
     def send_message(self):
+        user = input("What user would you like to send the message to? ")
+        #if user in (enter json file here):
+        #   msg = input("Enter message you wish to send: ")
+        #   add message to other user's message list
+        #else:
+        #   print("User does not exist. ") 
         #implement sending message to friend here
         pass
