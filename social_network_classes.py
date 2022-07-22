@@ -41,7 +41,7 @@ class Person:
 
     def send_message(self):
         user = input("What user would you like to send the message to? ")
-        #if user in (enter json file here):
+        #if user in userData.json:
         #   msg = input("Enter message you wish to send: ")
         #   add message to other user's message list
         #else:

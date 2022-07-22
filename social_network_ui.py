@@ -16,3 +16,10 @@ def manageAccountMenu():
     print("4. View all my messages")
     print("5. <- Go back ")
     return input("Please Choose a number: ")
+
+def loginToAccount():
+    id = input("Enter username")
+    #if id in (enter json file here):
+    #   manageAccountMenu()
+    #else:
+    #   print("Account does not exist")
