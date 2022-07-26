@@ -33,12 +33,12 @@ class Person:
         self.messagelist = []
         self.blackList = []
 
-    def editDetails(): #really convoluted way of allowing users to edit account details
+    def editDetails(oldUser): #really convoluted way of allowing users to edit account details
         result = input("Select action: ") 
         if result == "4": #had to put this if statement up here, i know its ugly
             return
         users = social_network_ui.readUsers()
-        oldUser = input("Enter current username: ")
+        #oldUser = input("Enter current username: ")
         #oldPass = input("Enter current password: ") #realized this is useless
         if result == "1": #this is for changing just the user; it just adds a new key-value pair to the dict, with a new name for the key
             newUser = input("Enter new username: ")

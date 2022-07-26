@@ -23,7 +23,7 @@ if __name__ == "__main__":
             if inner_menu_choice != 0:
                 while True: #disgustingly large amount of if statements
                     if inner_menu_choice == "1":
-                        social_network_ui.editDetailsMenu()
+                        social_network_ui.editDetailsMenu(social_network_ui.username)
                         Person.editDetails()
                     if inner_menu_choice == "2":
                         Person.add_friend(social_network_ui.username)
