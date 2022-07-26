@@ -25,7 +25,7 @@ class SocialNetwork:
 
 
 class Person:
-    #creates new user w/ two empty lists for messages and friends
+    #creates new user w/ three empty lists for messages, friends, and blocked users
     def __init__(self, name, password):
         self.id = name
         self.password = password
