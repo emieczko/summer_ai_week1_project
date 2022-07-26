@@ -15,7 +15,8 @@ class SocialNetwork:
         users = social_network_ui.readUsers() 
         self.friendlist = []
         self.messagelist = []
-        users[self.id] = self.password, self.friendlist, self.messagelist
+        self.blackList = []
+        users[self.id] = self.password, self.friendlist, self.messagelist, self.blackList
         social_network_ui.writeUsers(users)
         #print(type(users["username"]))
 
@@ -29,6 +30,7 @@ class Person:
         self.password = password
         self.friendlist = []
         self.messagelist = []
+        self.blackList = []
 
     def editDetails(): #really convoluted way of allowing users to edit account details
         result = input("Select action: ") 
@@ -62,6 +64,9 @@ class Person:
             users[username][1].append(newFriend)
             #print(users)
             social_network_ui.writeUsers(users)
+            if newFriend in users[username][3]:
+                users[username][3].remove(newFriend)
+                social_network_ui.writeUsers(users)
         else:
             print("User does not exist. ")
         #print(users)
@@ -69,12 +74,39 @@ class Person:
 
     def send_message(username):
         global messageList
+        global sender
         messageList = []
         users = social_network_ui.readUsers()
         user = input("What user would you like to send the message to? ")
         if user in users.keys():
-            message = input("What is your message: ")
-            user[username][2].append(message)
+            for k,v in users.items():
+                if k == user:
+                    sender = username
+                    message = input("What is your message: ")
+                    #print(users[user][2])
+                    totalMessage = "(From: " + username + ") " + message
+                    print(totalMessage)
+                    users[user][2].append(totalMessage)
+                    social_network_ui.writeUsers(users)
+                else:
+                    continue
         else:
             print("User does not exist. ")
             return
+    def blockUser(username):
+        global userBlackList
+        userBlackList = []
+        badUser = input("What user would you like to block? ")
+        users = social_network_ui.readUsers()
+        if badUser in users.keys():
+            if badUser not in users[username][3]:
+                users[username][3].append(badUser)
+                social_network_ui.writeUsers(users)
+                print(users[username][1])
+                if badUser in users[username][1]:
+                    users[username][1].remove(badUser)
+                    social_network_ui.writeUsers(users)
+            else:
+                print("User is already blocked. ")
+        else:
+            print("User does not exist. ")

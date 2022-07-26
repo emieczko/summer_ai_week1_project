@@ -15,9 +15,9 @@ def manageAccountMenu():
     print("2. Add a friend")
     print("3. Block user")
     print("4. Send a message")
-    print("4. View all my friends")
-    print("5. View all my messages")
-    print("6. <- Go back ")
+    print("5. View all my friends")
+    print("6. View all my messages")
+    print("7. <- Go back ")
     return input("Please Choose a number: ")
 
 def editDetailsMenu():
@@ -37,12 +37,12 @@ def loginToAccount(users):
         for k,v in users.items():
             if password == v[0]:
                 return manageAccountMenu()
-            else: 
-                print("Password not found. ")
-                return False
     else:
         print("Username not found. ")
         return False
+    
+    print("Password not found. ")
+    return False
 
 #reads files
 def readUsers():
@@ -56,3 +56,13 @@ def readUsers():
 def writeUsers(users):
     with open("userData.json", "w+") as f:
         json.dump(users, f, indent=4)
+
+def viewMessages():
+    users = readUsers()
+    print("")
+    print("Your messages are:", users[username][2])
+
+def viewFriends():
+    users = readUsers()
+    print("")
+    print("Your friends list:",users[username][1])

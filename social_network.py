@@ -1,4 +1,5 @@
 #Various import Statements can go here
+from numpy import inner
 from  social_network_classes import SocialNetwork,Person
 import social_network_ui
 #Create instance of main social network object
@@ -26,9 +27,15 @@ if __name__ == "__main__":
                         Person.editDetails()
                     if inner_menu_choice == "2":
                         Person.add_friend(social_network_ui.username)
+                    if inner_menu_choice == "3":
+                        Person.blockUser(social_network_ui.username)
                     if inner_menu_choice == "4":
                         Person.send_message(social_network_ui.username)
+                    if inner_menu_choice == "5":
+                        social_network_ui.viewFriends()
                     if inner_menu_choice == "6":
+                        social_network_ui.viewMessages()
+                    if inner_menu_choice == "7":
                         break
                     else:
                         inner_menu_choice = social_network_ui.manageAccountMenu()
