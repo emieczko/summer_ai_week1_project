@@ -1,4 +1,4 @@
-import json
+#import json
 import social_network_ui
 # A class to hold general system wide social media data and functions. Eg Data objects of all people, Eg functions: Save social media to disk
 #you'll see random commented-out print statements from testing, please ignore them

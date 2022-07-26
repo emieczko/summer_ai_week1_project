@@ -21,7 +21,7 @@ if __name__ == "__main__":
         elif choice == "2":
             inner_menu_choice = social_network_ui.loginToAccount(social_network_ui.readUsers())
             if inner_menu_choice != 0:
-                while True:
+                while True: #disgustingly large amount of if statements
                     if inner_menu_choice == "1":
                         social_network_ui.editDetailsMenu()
                         Person.editDetails()
@@ -38,6 +38,8 @@ if __name__ == "__main__":
                     if inner_menu_choice == "7":
                         social_network_ui.viewMessages()
                     if inner_menu_choice == "8":
+                        social_network_ui.viewBlockedUsers()
+                    if inner_menu_choice == "9":
                         break
                     else:
                         inner_menu_choice = social_network_ui.manageAccountMenu()

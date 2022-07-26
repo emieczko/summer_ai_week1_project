@@ -18,7 +18,8 @@ def manageAccountMenu():
     print("5. Send a message")
     print("6. View all my friends")
     print("7. View all my messages")
-    print("8. <- Go back ")
+    print("8. View blocked users")
+    print("9. <- Go back ")
     return input("Please Choose a number: ")
 
 def editDetailsMenu():
@@ -57,7 +58,7 @@ def readUsers():
 def writeUsers(users):
     with open("userData.json", "w+") as f: #opens file, sets to read and write
         json.dump(users, f, indent=4) #dumps modified data back into json file, rewriting it
-
+#view messages functions
 def viewMessages():
     users = readUsers()
     print("")
@@ -67,4 +68,9 @@ def viewMessages():
 def viewFriends():
     users = readUsers()
     print("")
-    print("Your friends list:",users[username][1]) #just prints out the friend listt
+    print("Your friends list:",users[username][1]) #just prints out the friend list
+#view friend function
+def viewBlockedUsers():
+    users = readUsers()
+    print("")
+    print("Your blocked users list:",users[username][3]) #same as before
