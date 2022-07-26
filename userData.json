@@ -9,13 +9,11 @@
     ],
     "user1": [
         "pass1",
-        [
-            "username"
-        ],
+        [],
         [
             "(From: username) hello!",
-            "(From: username) bye!"
-        ],
-        []
+            "(From: username) bye",
+            "(From: username) hello"
+        ]
     ]
 }

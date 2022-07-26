@@ -30,12 +30,14 @@ if __name__ == "__main__":
                     if inner_menu_choice == "3":
                         Person.blockUser(social_network_ui.username)
                     if inner_menu_choice == "4":
-                        Person.send_message(social_network_ui.username)
+                        Person.unblockUser(social_network_ui.username)
                     if inner_menu_choice == "5":
-                        social_network_ui.viewFriends()
+                        Person.send_message(social_network_ui.username)
                     if inner_menu_choice == "6":
-                        social_network_ui.viewMessages()
+                        social_network_ui.viewFriends()
                     if inner_menu_choice == "7":
+                        social_network_ui.viewMessages()
+                    if inner_menu_choice == "8":
                         break
                     else:
                         inner_menu_choice = social_network_ui.manageAccountMenu()
