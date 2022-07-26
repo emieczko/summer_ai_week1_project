@@ -11,17 +11,14 @@
             "blockedUser"
         ]
     ],
-    "user1": [
-        "pass1",
-        [],
-        [
-            "(From: username) hello!",
-            "(From: username) bye",
-            "(From: username) hello"
-        ]
-    ],
     "blockedUser": [
         "password",
+        [],
+        [],
+        []
+    ],
+    "user1": [
+        "pass1",
         [],
         [],
         []

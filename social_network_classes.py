@@ -44,6 +44,16 @@ class Person:
             newUser = input("Enter new username: ")
             users[newUser] = users.pop(oldUser)
             social_network_ui.writeUsers(users)
+            for k,v in users.items():
+                print(v[1])
+                if oldUser in v[1]:
+                    users[k][1].remove(oldUser)
+                    users[k][1].append(newUser)
+                    social_network_ui.writeUsers(users)
+                if oldUser in v[3]:
+                    users[k][1].remove(oldUser)
+                    users[k][1].append(newUser)
+                    social_network_ui.writeUsers(users)
         elif result == "2": #new changing new password, just rewrites the value for password
             newPass = input("Enter new password: ")
             users[oldUser] = newPass, [], []
@@ -54,6 +64,15 @@ class Person:
             users[newUser] = users.pop(oldUser)
             users[newUser] = newPass, [], []
             social_network_ui.writeUsers(users)
+            for k,v in users.keys():
+                if oldUser in v[1]:
+                    users[k][1].remove(oldUser)
+                    users[k][1].append(newUser)
+                    social_network_ui.writeUsers(users)
+                if oldUser in v[3]:
+                    users[k][1].pop(oldUser)
+                    users[k][1].append(newUser)
+                    social_network_ui.writeUsers(users)
         else: #failsafe
             print("Unknown choice. ")
             
