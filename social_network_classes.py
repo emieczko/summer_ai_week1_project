@@ -64,6 +64,8 @@ class Person:
         if newFriend in users.keys(): #checks if the user exists, and adds them to the friends list
             if newFriend in users[username][1]: #friend already exists
                 return print("This user is already a friend. ")
+            if username in users[newFriend][3]:
+                return print("This user has blocked you.")
             users[username][1].append(newFriend)
             #print(users)
             social_network_ui.writeUsers(users)
